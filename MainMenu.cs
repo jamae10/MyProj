@@ -4,7 +4,7 @@ namespace MidTermProj//
 {//
     class MainMenu
     {
-        public int choice;
+        public static int choice, fchoice;
         //Main Menu Table
         public void displayMainMenu()
         {
@@ -42,15 +42,24 @@ namespace MidTermProj//
             return choice;
         }
 
+
         //Main Method
         static void Main(string[] args)
         {
             Boolean loop = true;
             do
-            {
-                MainMenu menu = new MainMenu();
-                menu.displayMainMenu();
-                menu.getMainMenu();
+            {   
+                //creating objects for each class
+                MainMenu disp = new MainMenu();
+                ArithMetic opt1 = new ArithMetic();
+                StringProb opt2 = new StringProb();
+                UnitConv opt3 = new UnitConv();
+                SortingArr opt4 = new SortingArr();
+                MathClass opt5 = new MathClass();
+
+                disp.displayMainMenu();
+                fchoice = disp.getMainMenu();
+                
                 break;
             } while (loop);
         }

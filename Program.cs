@@ -4,6 +4,7 @@ namespace MidTermProj//
 {//
     class MainMenu
     {
+        public int choice;
         //Main Menu Table
         public void displayMainMenu()
         {
@@ -21,6 +22,26 @@ namespace MidTermProj//
 
         }
 
+        //get user input in Main Menu
+        public int getMainMenu()
+        {
+            Boolean cc = true;
+
+            while (cc)
+            {
+                Console.WriteLine("Enter Number of Choice: ");
+                choice = Convert.ToInt32(Console.ReadLine());
+
+                if (choice <= 0 || choice > 7)
+                {
+                    Console.WriteLine("Invalid Choice of Number. Please Try Again.\n");
+                }
+
+                else { break; }
+            }
+            return choice;
+        }
+
         //Main Method
         static void Main(string[] args)
         {
@@ -29,6 +50,7 @@ namespace MidTermProj//
             {
                 MainMenu menu = new MainMenu();
                 menu.displayMainMenu();
+                menu.getMainMenu();
                 break;
             } while (loop);
         }
